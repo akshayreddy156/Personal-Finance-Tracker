@@ -7,16 +7,18 @@ public class UserResponse {
 	private long userId;
 	private String name;
 	private String email;
-	private BigDecimal  monthlyAmount;
+	private BigDecimal  monthlyIncome;
+	private BigDecimal  availableBalance;
 	public UserResponse() {
 		super();
 	}
-	public UserResponse(long userId, String name, String email, BigDecimal  monthlyAmount) {
+	public UserResponse(long userId, String name, String email, BigDecimal  monthlyIncome,BigDecimal  availableBalance) {
 		super();
 		this.userId = userId;
 		this.name = name;
 		this.email = email;
-		this.monthlyAmount = monthlyAmount;
+		this.monthlyIncome = monthlyIncome;
+		this.availableBalance=availableBalance;
 	}
 	public long getUserId() {
 		return userId;
@@ -36,11 +38,17 @@ public class UserResponse {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public BigDecimal  getMonthlyAmount() {
-		return monthlyAmount;
+	public BigDecimal  getMonthlyIncome() {
+		return monthlyIncome;
 	}
-	public void setMonthlyAmount(BigDecimal  monthlyAmount) {
-		this.monthlyAmount = monthlyAmount;
+	public void setMonthlyIncome(BigDecimal  monthlyIncome) {
+		this.monthlyIncome = monthlyIncome;
+	}
+	public BigDecimal getAvailableBalance() {
+		return availableBalance;
+	}
+	public void setAvailableBalance(BigDecimal availableBalance) {
+		this.availableBalance = availableBalance;
 	}
 
 }

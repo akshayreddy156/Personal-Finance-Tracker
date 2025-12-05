@@ -36,10 +36,11 @@ public class UserServiceImpl implements UserService {
 		user.setEmail(request.getEmail());
 		user.setPasswordHash(passwordEncoder.encode(request.getPassword()));
 		BigDecimal monthlyIncome = request.getMonthlyIncome() == null ? BigDecimal.ZERO : request.getMonthlyIncome();
-		user.setMonthlyAmount(monthlyIncome);
+		user.setMonthlyIncome(monthlyIncome);
+		user.setAvailableBalance(monthlyIncome);
 		user.setCreatedAt(LocalDateTime.now());
 		User saved = userRepository.save(user);
-		return new UserResponse(saved.getUserId(), saved.getName(), saved.getEmail(), saved.getMonthlyIncome());
+		return new UserResponse(saved.getUserId(), saved.getName(), saved.getEmail(), saved.getMonthlyIncome(),saved.getAvailableBalance());
 	}
 
 }
